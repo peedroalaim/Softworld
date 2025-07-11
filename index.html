@@ -105,19 +105,28 @@
 
     <!-- Cabeçalho (Header) -->
     <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-            <!-- Logotipo/Nome da Empresa -->
-            <a href="#" class="text-2xl font-bold text-orange-500 rounded-lg p-2 hover:bg-gray-100 transition duration-300">
-                Soft-world
-            </a>
+        <div class="container mx-auto flex flex-wrap md:flex-row justify-between items-center px-4">
+            <!-- Logo e Botão de Hambúrguer Container para mobile -->
+            <div class="flex justify-between items-center w-full md:w-auto">
+                <!-- Logotipo/Nome da Empresa -->
+                <a href="#" class="text-2xl font-bold text-orange-500 rounded-lg p-2 hover:bg-gray-100 transition duration-300">
+                    Soft-world
+                </a>
+                <!-- Botão de Menu Hambúrguer para Mobile -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
             <!-- Navegação Principal -->
-            <nav class="mt-4 md:mt-0">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-                    <li><a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Início</a></li>
-                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Sobre Nós</a></li>
-                    <li><a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Serviços</a></li>
-                    <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Portfólio</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Contacto</a></li>
+            <nav id="main-navigation" class="hidden md:flex flex-col md:flex-row mt-4 md:mt-0 space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto items-center">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto items-center">
+                    <li><a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Início</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Sobre Nós</a></li>
+                    <li><a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Serviços</a></li>
+                    <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Portfólio</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -181,8 +190,8 @@
                 </div>
                 <!-- Cartão de Serviço: Criação e Gestão de Redotpay Visa -->
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
-                    <!-- IMAGEM: Esta imagem já é do site da Redotpay. Pode mantê-la. -->
-                    <img src="https://www.redotpay.com/static/media/redotpay-card-mobile.e85871f3.png" alt="Cartão Redotpay Visa" class="mx-auto mb-6 rounded-full w-24 h-24 object-contain">
+                    <!-- IMAGEM: Esta imagem foi atualizada para a imagem fornecida pelo utilizador. -->
+                    <img src="images/visa.jpg" alt="Cartão Redotpay Visa" class="mx-auto mb-6 rounded-full w-24 h-24 object-contain">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">Criação e Gestão de Redotpay Visa</h3>
                     <!-- Descrição curta para o cartão -->
                     <p class="text-gray-600 mb-4">
@@ -302,7 +311,7 @@
         <div class="modal-content">
             <button class="modal-close-button" onclick="closeModal('redotpayModal')">&times;</button>
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Criação e Gestão de Redotpay Visa</h3>
-            <img src="https://www.redotpay.com/static/media/redotpay-card-mobile.e85871f3.png" alt="Cartão Redotpay Visa" class="mx-auto mb-6 w-48 h-auto object-contain">
+            <img src="images/visa.jpg" alt="Cartão Redotpay Visa" class="mx-auto mb-6 w-48 h-auto object-contain">
             <p class="text-gray-700 leading-relaxed mb-4">
                 A Soft-world facilita a criação e gestão de cartões Redotpay Visa, a solução definitiva para pagamentos cripto seguros.
             </p>
@@ -357,7 +366,6 @@
             </div>
         </div>
     </div>
-
     <script>
         // Função para exibir mensagens na caixa de mensagem personalizada
         function showMessage(message, type) {
@@ -371,12 +379,24 @@
             }, 3000);
         }
 
-        // Removido o event listener de submit para o formulário de contacto,
-        // pois o Formspree irá lidar com o envio diretamente através do atributo 'action'.
-        // document.getElementById('contactForm').addEventListener('submit', function(event) {
-        //     event.preventDefault(); // Impede o envio padrão do formulário
-        //     // ... (código anterior de simulação)
-        // });
+        // Lida com o envio do formulário de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Em um ambiente real, você enviaria os dados do formulário para um servidor aqui.
+            // Para este exemplo "gratuito", apenas simulamos o envio.
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            console.log('Dados do formulário:', { name, email, message });
+
+            // Simula um envio bem-sucedido
+            showMessage('Mensagem enviada com sucesso! Entraremos em contacto brevemente.', 'success');
+
+            // Limpa o formulário
+            this.reset();
+        });
 
         // Adiciona funcionalidade de rolagem suave para links de navegação
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -411,6 +431,8 @@
                 closeModal('appsCatalogueModal');
             }
         });
+
+        // O código JavaScript para o menu de hambúrguer foi removido.
     </script>
 </body>
 </html>
