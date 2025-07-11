@@ -432,7 +432,24 @@
             }
         });
 
-        // O código JavaScript para o menu de hambúrguer foi removido.
+        // NOVO JavaScript para o menu de hambúrguer
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainNavigation = document.getElementById('main-navigation');
+
+        if (mobileMenuButton && mainNavigation) {
+            mobileMenuButton.addEventListener('click', () => {
+                mainNavigation.classList.toggle('hidden');
+            });
+
+            // Fechar menu mobile quando um link é clicado
+            document.querySelectorAll('#main-navigation a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function () {
+                    if (!mainNavigation.classList.contains('hidden')) {
+                        mainNavigation.classList.add('hidden');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
