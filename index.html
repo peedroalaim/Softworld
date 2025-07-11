@@ -105,28 +105,19 @@
 
     <!-- Cabeçalho (Header) -->
     <header class="bg-white shadow-sm py-4">
-        <div class="container mx-auto flex flex-wrap md:flex-row justify-between items-center px-4">
-            <!-- Logo e Botão de Hambúrguer Container para mobile -->
-            <div class="flex justify-between items-center w-full md:w-auto">
-                <!-- Logotipo/Nome da Empresa -->
-                <a href="#" class="text-2xl font-bold text-orange-500 rounded-lg p-2 hover:bg-gray-100 transition duration-300">
-                    Soft-world
-                </a>
-                <!-- Botão de Menu Hambúrguer para Mobile -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <!-- Logotipo/Nome da Empresa -->
+            <a href="#" class="text-2xl font-bold text-orange-500 rounded-lg p-2 hover:bg-gray-100 transition duration-300">
+                Soft-world
+            </a>
             <!-- Navegação Principal -->
-            <nav id="main-navigation" class="hidden md:flex flex-col md:flex-row mt-4 md:mt-0 space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto items-center">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto items-center">
-                    <li><a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Início</a></li>
-                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Sobre Nós</a></li>
-                    <li><a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Serviços</a></li>
-                    <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Portfólio</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100 w-full text-center">Contacto</a></li>
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                    <li><a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Início</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Sobre Nós</a></li>
+                    <li><a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Serviços</a></li>
+                    <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Portfólio</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -365,7 +356,7 @@
                 </div>
             </div>
         </div>
-    </div
+    </div>
     <script>
         // Função para exibir mensagens na caixa de mensagem personalizada
         function showMessage(message, type) {
@@ -432,25 +423,7 @@
             }
         });
 
-        // Novo JavaScript para o menu de hambúrguer
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mainNavigation = document.getElementById('main-navigation');
-
-        if (mobileMenuButton && mainNavigation) {
-            mobileMenuButton.addEventListener('click', () => {
-                mainNavigation.classList.toggle('hidden');
-            });
-
-            // Fechar menu mobile quando um link é clicado
-            document.querySelectorAll('#main-navigation a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function () {
-                    if (!mainNavigation.classList.contains('hidden')) {
-                        mainNavigation.classList.add('hidden');
-                    }
-                });
-            });
-        }
+        // O código JavaScript para o menu de hambúrguer foi removido.
     </script>
 </body>
 </html>
-
